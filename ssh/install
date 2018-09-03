@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# Install all applications and run install.sh in every subdir
+
+# include library helps for colorized echo
+source ./lib_sh/echos.sh
+
+set -e
+
+cd "$(dirname $0)"/..
+
+# checking to see if ssh key already generated
+if ! [ -f "$HOME/.ssh/id_rsa" ]; then
+	# Setting up ssh key for github and other purposes
+	info 'setting up ssh key'
+	ssh-keygen -t rsa -b 4096 -C "jason@worthen.org"
+fi
+
+eval "$(ssh-agent -s)"
+
+# Copy ssh conig file to automatically load keys into ssh-agent & store passphrases in keychain
+cp ./ssh/config ~/.ssh/config
+/usr/bin/ssh-add -K ~/.ssh/id_rsa
+
+pbcopy < ~/.ssh/id_rsa.pub
+
+success 'ssh key in clipboard. log in to github and paste.'
+
+exit 0

@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Atom
+#
+# This corrects permissions and installs packages for atom
+
+# include library helps for colorized echo
+source ./lib_sh/echos.sh
+
+# Fix Atom permission issue on cache direectory (doesn't allow autoupdate)
+# sudo chown -R $USER ~/Library/Application\ Support/com.github.atom.ShipIt
+
+# Install Atom Packages
+info 'installing atom custom packages'
+apm install --packages-file $ZSH/atom/packages.txt
+success 'atom packages installed'
+
+exit 0

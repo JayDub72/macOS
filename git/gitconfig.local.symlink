@@ -1,0 +1,5 @@
+[user]
+        name = Jason Worthen
+        email = jason@worthen.org
+[credential]
+        helper = osxkeychain

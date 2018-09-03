@@ -1,0 +1,55 @@
+# Make sure /usr/local/bin is in path
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# ZSH points to the dotfiles directory
+export ZSH=${HOME}/.dotfiles
+
+# Projects folder to simplify aliasing
+export PROJECTS=${HOME}/Documents/github
+
+# Set default user name -- simplifies and reduces noise in zsh prompts
+DEFAULT_USER=$USER
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# Powerlevel9k prompt for ohmyzsh
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" --"
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time go_version)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context battery dir vcs virtualenv ssh)
+
+# Enable command auto-correction
+ENABLE_CORRECTION="true"
+
+# Display red dots whilst waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(
+  battery
+  colored-man-pages
+  colorize
+  git
+  iterm2
+  osx
+  sublime
+)
+
+# all of our zsh files
+source $ZSH/zsh/oh-my-zsh.zsh
+
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down

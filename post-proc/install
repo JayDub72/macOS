@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# ~/osx.sh — Originally from https://mths.be/osx
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `osx.sh` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Remove all icons from the Dock
+dockutil --remove all
+
+# Add prferred apps
+dockutil --add "/Applications/Google Chrome.app/"
+dockutil --add "/Applications/Safari.app/"
+dockutil --add "/Applications/Calendar.app/"
+dockutil --add "/Applications/Messages.app/"
+dockutil --add "/Applications/News.app/"
+dockutil --add "/Applications/Spotify.app"
+dockutil --add "/Applications/Microsoft OneNote.app"
+dockutil --add "/Applications/Sublime Text.app"
+dockutil --add "/Applications/Atom.app"
+dockutil --add "/Applications/iTerm.app"
+dockutil --add "/Applications" --view grid --display folder --section others --allhomes
+dockutil --add '~/Documents' --view list --display folder --section others
+dockutil --add '~/Downloads' --view list --display folder --section others
+
+user '›› What do you want to name this computer?'
+read -e comp_name
+
+sudo scutil --set ComputerName $comp_name
+sudo scutil --set HostName $comp_name
+sudo scutil --set LocalHostName $comp_name
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $comp_name

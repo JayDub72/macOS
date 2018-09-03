@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Installs customer application configuraton changes
+
+# include library helps for colorized echo
+source ./lib_sh/echos.sh
+
+# Finalize Adobe Creative CLoud install (brew install does not launch Adobe CC installer -- only downloads it)
+info 'running adobe cc installer'
+open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app
+
+# Change plain-text files to use Atom or Sublime
+info 'setting sublime as default editor'
+duti -s com.sublimetext.3 public.plain-text all
+# duti -s com.gitbub.atom public.plain-text all
+
+# Install Office 365
+info 'downloading microsoft office (this takes a long time...)'
+wget -q -O Ofc365.pkg https://go.microsoft.com/fwlink/?linkid=525133
+
+info 'installing microsoft office (be patient again)'
+sudo installer -pkg ./Ofc365.pkg -target /
+
+success 'succesfully installed office 365'
+
+rm -f ./Ofc365.pkg
+
+exit 0
