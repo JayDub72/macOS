@@ -22,9 +22,9 @@ dockutil --add "/Applications/Microsoft OneNote.app"
 dockutil --add "/Applications/Sublime Text.app"
 dockutil --add "/Applications/Atom.app"
 dockutil --add "/Applications/iTerm.app"
-dockutil --add "/Applications" --view grid --display folder --section others --allhomes
-dockutil --add '~/Documents' --view list --display folder --section others
-dockutil --add '~/Downloads' --view list --display folder --section others
+dockutil --add "/Applications" --view grid --display folder --sort name --section others --allhomes
+dockutil --add '~/Documents' --view list --display folder --sort name --section others
+dockutil --add '~/Downloads' --view list --display folder --sort name --section others
 
 user '›› What do you want to name this computer?'
 read -e comp_name
