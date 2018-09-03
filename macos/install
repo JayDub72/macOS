@@ -9,14 +9,6 @@ sudo softwareupdate -i -a
 
 info 'configuring macOS settings'
 
-user '›› What do you want to name this computer?'
-read -e comp_name
-
-sudo scutil --set ComputerName $comp_name
-sudo scutil --set HostName $comp_name
-sudo scutil --set LocalHostName $comp_name
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $comp_name
-
 # Creating githubt directory
 mkdir -p "$HOME/Documents/github/"
 
