@@ -1,7 +1,4 @@
 Notes:
 cannot set computer name in macos/install
 
-atom install
-remove version #s, emmet fails
-
-
+moved to post-proc to see if that will help
