@@ -19,7 +19,7 @@ NC='\033[0m'
 # Leverages OneDrive but you can change to anything you like
 # ** rsync copies break if path has a space in them **
 echo "What is the computer name you want to restore from?"
-read CompName
+read -e CompName
 SourcePath="/Users/${USER}/OneDrive/Backup/$CompName"
 
 # Get list of users and echo to a dotfile in local directory
