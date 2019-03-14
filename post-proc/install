@@ -2,6 +2,9 @@
 
 # ~/osx.sh — Originally from https://mths.be/osx
 
+# include library helps for colorized echo
+source ./lib_sh/echos.sh
+
 # Ask for the administrator password upfront
 sudo -v
 

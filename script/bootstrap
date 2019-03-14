@@ -27,6 +27,10 @@ setup_gitconfig () {
 
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
 
+    # add git alias (cmp) to add, commit with message and push
+    # usage: git cmp "long commit message"
+    git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push; }; f'
+
     success 'gitconfig'
   fi
 }
@@ -139,21 +143,52 @@ fi
 
 read -p "Press ENTER to continue..."
 
+# begin install of applications via Homebrew
 if source script/appinstall | while read -r data; do info "$data"; done
 then
-  success "done"
+	success "homebrew install complete"
 else
-  fail "error configuring macOS"
+	fail "error brewing"
 fi
 
-# begin install of applications
-info "installing applications"
-if source script/appinstall | while read -r data; do info "$data"; done
+# Forcing order of installation
+# macOS settings
+if source macos/install | while read -r data; do info "$data"; done
 then
-	success "done"
+	success "macOS settings complete"
+else
+	fail "error configuring macOS"
+fi
+
+# install custom applications
+if source apps/appinstall | while read -r data; do info "$data"; done
+then
+	success "custom applications installed"
 else
 	fail "error installing applications"
 fi
+
+# configure atom
+if source atom/appinstall | while read -r data; do info "$data"; done
+then
+	success "custom applications installed"
+else
+	fail "error installing applications"
+
+# configure ssh
+if source ssh/appinstall | while read -r data; do info "$data"; done
+then
+	success "custom applications installed"
+else
+	fail "error installing applications"
+fi
+
+# final clean-up
+if source post-proc/appinstall | while read -r data; do info "$data"; done
+then
+	success "custom applications installed"
+else
+	fail "error installing applications"
 
 echo ''
 success '  All installed!'

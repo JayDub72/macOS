@@ -16,12 +16,12 @@ brew "coreutils"											# GNU File, Shell, and Text utilities
 brew "curl"													# Get a file from an HTTP, HTTPS or FTP server
 brew "findutils"											# Collection of GNU find, xargs and locate
 brew "foremost"												# Console program to recover files based on their headers and footers
-brew "gnu-sed", args: ["with-default-names"]				# GNU implementation of the famous stream editor
+brew "gnu-sed"				# GNU implementation of the famous stream editor
 brew "gnupg"												# GNU Pretty Good Privacy (PGP) package
 brew "go"													# Open source programming language to build simple/reliable/efficient software
 brew "grc"													# Colorize logfiles and command output
 brew "grep"													# GNU grep, egrep and fgrep
-brew "imagemagick", args: ["with-webp"]						# Tools and libraries to manipulate images in many formats
+brew "imagemagick"						# Tools and libraries to manipulate images in many formats
 brew "libtool"												# Generic library support script
 brew "lynx"													# Tezt-based web browser
 brew "mas"													# Mac App Store command-line interface
@@ -39,8 +39,8 @@ brew "screen"												# Terminal multiplexer with VT100/ANSI terminal emulati
 brew "ssh-copy-id"											# Add a public key to a remote machine's authorized_keys file
 brew "tmux"													# Terminal multiplexer
 brew "tree"													# Display directories as trees (with optional color/HTML output)
-brew "vim", args: ["with-override-system-vi"]				# Vi 'workalike' with many additional features
-brew "wget", args: ["with-iri"]								# Internet file retriever
+brew "vim"				# Vi 'workalike' with many additional features
+brew "wget"								# Internet file retriever
 brew "xz"													# General-purpose data compression with high compression ratio
 brew "zopfli"												# New zlib (gzip, deflate) compatible compressor
 

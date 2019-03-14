@@ -17,10 +17,6 @@ info "installing brew bundle"
 brew bundle
 success "brew bundle complete"
 
-# add git alias (cmp) to add, commit with message and push
-# usage: git cmp "long commit message"
-git config --global alias.cmp '!f() { git add -A && git commit -m "$@" && git push; }; f'
-
 # Change shell to ZSH, if it isn't already there
 if grep -Fxq /etc/shells '/usr/local/bin/zsh'
 then
@@ -30,14 +26,4 @@ else
 	success "zsh shell set as default"
 fi
 
-# find the installers and run them iteratively
-# find . -name install | while read installer ; do sh -c "${installer}" ; done
-
-# Forcing order of installation
-if source macos/install | while read -r data; do info "$data"; done
-if source apps/install | while read -r data; do info "$data"; done
-if source atom/install | while read -r data; do info "$data"; done
-if source ssh/install | while read -r data; do info "$data"; done
-if source post-proc/install | while read -r data; do info "$data"; done
-
-succes 'setup is complete'
+success 'setup is complete'
