@@ -191,4 +191,4 @@ else
 	fail "error finalizing installation"
 
 echo ''
-success '  All installed!'
+success '  Congratulations! All installed!'
