@@ -6,12 +6,6 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# # Create LaunchAgents directory so Amazon Music installs
-# info "patching for amazon music install"
-# mkdir -p ~/Library/LaunchAgents
-# sudo chown -R $USER ~/Library/LaunchAgents
-# sudo chmod 755 ~/Library/LaunchAgents
-
 # Run Homebrew through the Brewfile
 info "installing brew bundle"
 brew bundle

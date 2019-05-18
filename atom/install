@@ -12,7 +12,7 @@ source ./lib_sh/echos.sh
 
 # Install Atom Packages
 info 'installing atom custom packages'
-apm install --packages-file $ZSH/atom/packages.txt
+apm install --packages-file ./packages.txt
 success 'atom packages installed'
 
 exit 0

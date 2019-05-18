@@ -146,7 +146,7 @@ read -p "Press ENTER to continue..."
 # begin install of applications via Homebrew
 if source script/appinstall | while read -r data; do info "$data"; done
 then
-	success "homebrew install complete"
+	success "application install complete"
 else
 	fail "error brewing"
 fi
@@ -161,7 +161,7 @@ else
 fi
 
 # install custom applications
-if source apps/appinstall | while read -r data; do info "$data"; done
+if source apps/install | while read -r data; do info "$data"; done
 then
 	success "custom applications installed"
 else
@@ -169,14 +169,14 @@ else
 fi
 
 # configure atom
-if source atom/appinstall | while read -r data; do info "$data"; done
+if source atom/install | while read -r data; do info "$data"; done
 then
 	success "custom applications installed"
 else
 	fail "error installing applications"
 
 # configure ssh
-if source ssh/appinstall | while read -r data; do info "$data"; done
+if source ssh/install | while read -r data; do info "$data"; done
 then
 	success "custom applications installed"
 else
@@ -184,11 +184,11 @@ else
 fi
 
 # final clean-up
-if source post-proc/appinstall | while read -r data; do info "$data"; done
+if source post-proc/install | while read -r data; do info "$data"; done
 then
-	success "custom applications installed"
+	success "finalize installation"
 else
-	fail "error installing applications"
+	fail "error finalizing installation"
 
 echo ''
 success '  All installed!'

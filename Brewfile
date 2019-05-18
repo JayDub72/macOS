@@ -60,7 +60,7 @@ brew "duti"													# Select default apps for documents and URL schemes on m
 brew "git"													# Distributed revision control system
 brew "git-extras"											# Small git utilities
 brew "git-lfs"												# Git extension for versioning large files
-brew "git-flow"												# Extensions to follow Vincent Driessen's branching model		
+brew "git-flow"												# Extensions to follow Vincent Driessen's branching model
 
 ## Font and Web Font Utilities
 tap "bramstein/webfonttools"								# useful for creating web fonts
@@ -105,11 +105,13 @@ cask "cakebrew"
 cask "discord"
 # cask "docker"
 cask "dropbox"
-cask "easyfind"
-cask "filebot"
+# cask "easyfind"
+# cask "filebot"
 cask "google-backup-and-sync"
 cask "google-chrome"
-cask "handbrake"
+cask "firefox"
+# cask "handbrake"
+cask "iglance"
 cask "iterm2"
 cask "ivpn"
 cask "java"
@@ -119,15 +121,15 @@ cask "logos"
 cask "mono-mdk"
 cask "onedrive"
 cask "omnidisksweeper"
-cask "origin"
+# cask "origin"
 cask "plex-media-player"
-cask "slack"
+# cask "slack"
 cask "spectacle"
-cask "steam"
+# cask "steam"
 cask "spotify"
-cask "sublime-text"
+# cask "sublime-text"
 cask "the-unarchiver"
-cask "transmission"
+# cask "transmission"
 cask "twitch"
 cask "vlc"
 cask "ynab"
@@ -142,7 +144,6 @@ cask "quicklook-csv"
 cask "hetimazipql"
 cask "qlimagesize"
 cask "webpquicklook"
-cask "suspicious-package"
 cask "qlvideo"
 cask "jupyter-notebook-ql"
 cask "quicknfo"
@@ -157,7 +158,5 @@ cask "qladdict"
 # mas "Pages", id:409201541
 # mas "Parcel", id:639968404
 # mas "RollerCoaster Tycoon 3 Platinum", id:549294099
-# mas "Slack", id:803453959
 # mas "The Jackbox Party Pack 2", id:1034034328
 # mas "Twitter", id:409789998
-# mas "Xcode", id: 497799835

@@ -10,7 +10,7 @@ info 'running adobe cc installer'
 open /usr/local/Caskroom/adobe-creative-cloud/latest/Creative\ Cloud\ Installer.app
 
 # Change plain-text files to use Atom or Sublime
-info 'setting sublime as default editor'
+info 'setting atom as default editor'
 # duti -s com.sublimetext.3 public.plain-text all
 duti -s com.gitbub.atom public.plain-text all
 
