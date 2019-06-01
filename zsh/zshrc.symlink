@@ -20,11 +20,18 @@ fi
 
 # Powerlevel9k prompt for ohmyzsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" --"
 POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time go_version)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context battery dir vcs virtualenv ssh)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time dir_writable disk_usage ip ram load background_jobs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context battery dir vcs)
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="054" # dark purple
+
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="black"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
 
 # Enable command auto-correction
 ENABLE_CORRECTION="true"
@@ -39,11 +46,16 @@ plugins=(
   git
   iterm2
   osx
-  sublime
+  zsh-autosuggestions zsh-completions
 )
 
 # all of our zsh files
+source $ZSH/zsh/aliases.zsh
+source $ZSH/zsh/completion.zsh
+source $ZSH/zsh/config.zsh
 source $ZSH/zsh/oh-my-zsh.zsh
+source $ZSH/zsh/prompt.zsh
+source $ZSH/zsh/window.zsh
 
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
