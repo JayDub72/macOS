@@ -2,8 +2,8 @@ cask_args appdir: '/Applications'
 
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 
 ## UNIX/CLI Utilities
 brew "ack"													# better grep utility
@@ -22,6 +22,7 @@ brew "go"													# Open source programming language to build simple/reliabl
 brew "grc"													# Colorize logfiles and command output
 brew "grep"													# GNU grep, egrep and fgrep
 brew "imagemagick"						# Tools and libraries to manipulate images in many formats
+brew "java"
 brew "libtool"												# Generic library support script
 brew "lynx"													# Tezt-based web browser
 brew "mas"													# Mac App Store command-line interface
@@ -37,6 +38,7 @@ brew "rename"												# Perl-powered file rename script with many helpful bui
 brew "rlwrap"												# Readline wrapper: adds readline support to tools that lack it
 brew "screen"												# Terminal multiplexer with VT100/ANSI terminal emulation
 brew "ssh-copy-id"											# Add a public key to a remote machine's authorized_keys file
+brew "svn"
 brew "tmux"													# Terminal multiplexer
 brew "tree"													# Display directories as trees (with optional color/HTML output)
 brew "vim"				# Vi 'workalike' with many additional features
@@ -70,7 +72,6 @@ brew "bramstein/webfonttools/woff2"
 brew "freetype"												# Software library to render fonts
 
 cask "font-anonymous-pro"
-cask "font-dejavu-sans"
 cask "font-comic-neue"
 cask "font-computer-modern"
 cask "font-ibm-plex"
@@ -94,7 +95,7 @@ cask "font-times-new-roman"
 
 ## Casks
 cask "1password"
-cask "adobe-creative-cloud"
+# cask "adobe-creative-cloud"
 cask "adobe-acrobat-reader"
 # cask "amazon-music"
 cask "appcleaner"
@@ -114,7 +115,6 @@ cask "firefox"
 cask "iglance"
 cask "iterm2"
 cask "ivpn"
-cask "java"
 # cask "little-snitch"
 cask "logos"
 # ask "minecraft"
@@ -132,7 +132,7 @@ cask "the-unarchiver"
 # cask "transmission"
 cask "twitch"
 cask "vlc"
-cask "ynab"
+# cask "ynab"
 
 ## Quick Look plugins
 cask "qlcolorcode"
@@ -141,7 +141,7 @@ cask "qlmarkdown"
 cask "quicklook-json"
 cask "qlprettypatch"
 cask "quicklook-csv"
-cask "hetimazipql"
+# cask "hetimazipql"
 cask "qlimagesize"
 cask "webpquicklook"
 cask "qlvideo"
