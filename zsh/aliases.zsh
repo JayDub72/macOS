@@ -1,15 +1,10 @@
 # Lots of aliases to make life easier in shell
 
-# ls aliases
-alias l='ls -lFh'
-alias la='ls -lAFh'
-alias lr='ls -lRFh'
-alias lt='ls -ltFh'
-alias ll='ls -l'
-alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
+# colorls aliases
+alias l='colorls  --group-directories-first --almost-all'
+alias ll='colorls --long --group-directories-first --almost-all'
+alias lt='colorls --tree --group-directories-first --almost-all'
+alias llt='colorls --long --tree --group-directories-first --almost-all'
 
 # common aliases to simply life
 alias reload!='. ~/.zshrc'
