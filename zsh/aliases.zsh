@@ -53,7 +53,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # alias for homebrew
-alias brewup='brew update; brew upgrade; brew cleanup; brew cask upgrade; brew doctor'
+alias brewup='brew update; brew upgrade; brew upgrade --cask; brew cleanup; brew doctor'
 
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
